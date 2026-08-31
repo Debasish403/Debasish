@@ -1,126 +1,315 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Glowing Debasish Moyra Animation</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: #050515; /* আরও গাঢ় ব্যাকগ্রাউন্ড যাতে আলো স্পষ্ট বোঝা যায় */
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debasish Moyra - Biodata & Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-image: linear-gradient(rgba(244, 244, 249, 0.85), rgba(244, 244, 249, 0.85)), url('Debasish.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        h3 {
+            color: #34495e;
+        }
 
-    #name-container {
-      font-size: 42px;
-      font-weight: 800;
-      color: #ffffff;
-      z-index: 10;
-      display: flex;
-      letter-spacing: 2px;
-    }
+        /* ফিঙ্গারপ্রিন্ট ল্যাম্প সেকশন */
+        #lamp-section {
+            text-align: center;
+            background: rgba(15, 15, 15, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 400px;
+            margin: auto;
+            color: #fff;
+            box-shadow: 0 0 25px rgba(0,0,0,0.6);
+        }
+        .hanging-lamp {
+            margin-bottom: 15px;
+            transition: 0.5s;
+        }
+        .hanging-lamp img {
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 0 10px #333;
+            transition: 0.5s;
+        }
+        /* ফিঙ্গারপ্রিন্টে টাচ করলে ছবিতে আলো জ্বলে ওঠার ইফেক্ট */
+        .hanging-lamp.glow img {
+            box-shadow: 0 0 40px #f1c40f, 0 0 80px #f39c12;
+            border-color: #f1c40f;
+        }
+        
+        /* ফিঙ্গারপ্রিন্ট আইকন ডিজাইন */
+        .fingerprint-container {
+            cursor: pointer;
+            margin-top: 10px;
+            transition: transform 0.2s;
+        }
+        .fingerprint-container:hover {
+            transform: scale(1.1);
+        }
+        .fingerprint-icon {
+            font-size: 60px;
+            margin-bottom: 5px;
+        }
+        .instruction {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #bbb;
+        }
 
-    /* আলোর কিরণসহ অক্ষরের স্টাইল */
-    .char {
-      display: inline-block;
-      opacity: 0;
-      transform: scale(0.3) translateY(30px);
-      /* আলোর দ্যুতির জন্য টেক্সট শ্যাডো এবং ড্রপ শ্যাডো */
-      animation: glowIn .0s ease-out forwards;
-    }
-
-    /* আলোর ঝলক ও অক্ষর ভেসে ওঠার অ্যানিমেশন */
-    @keyframes glowIn {
-      0% {
-        opacity: 0;
-        transform: scale(0.3) translateY(30px);
-        text-shadow: 0 0 0px #fff;
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1.3) translateY(-5px);
-        /* তীব্র আলোর কিরণ (Glow Rays) */
-        text-shadow: 
-          0 0 10px #00ffff,
-          0 0 20px #00ffff,
-          0 0 40px #00ffff,
-          0 0 80px #00ffff,
-          0 0 120px #00ffff;
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-        /* স্থায়ী হালকা লাইট ইফেক্ট */
-        text-shadow: 
-          0 0 5px #00ffff,
-          0 0 15px #00ffff,
-          0 0 30px #00ffff;
-      }
-    }
-
-    /* ফুলের পাঁপড়ির স্টাইল */
-    .petal {
-      position: absolute;
-      top: -20px;
-      width: 15px;
-      height: 15px;
-      background-color: #ff69b4;
-      border-radius: 50% 0 50% 50%;
-      opacity: 0.7;
-      animation: fall linear infinite;
-      box-shadow: 0 0 8px #ff69b4; /* পাঁপড়িতেও হালকা গ্লো */
-    }
-
-    @keyframes fall {
-      to { transform: translateY(110vh) rotate(360deg); }
-    }
-  </style>
+        /* অন্যান্য সেকশন */
+        .page-section {
+            display: none;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 450px;
+            margin-top: 20px;
+        }
+        #home-section {
+            display: none;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 500px;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .menu-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .menu-list li {
+            margin: 12px 0;
+        }
+        .link-text {
+            text-decoration: underline;
+            color: #2980b9;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .link-text:hover {
+            color: #1abc9c;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            background-color: #2980b9;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: none;
+        }
+        .back-btn:hover {
+            background-color: #1abc9c;
+        }
+        .login-box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 300px;
+            margin-top: 15px;
+        }
+        .login-box input {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-box button {
+            padding: 8px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-box button:hover {
+            background-color: #219653;
+        }
+        .error-msg {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 <body>
 
-  <div id="name-container"></div>
-
-  <script>
-    const fullName = "DEBASISH MOYRA";
-    const container = document.getElementById('name-container');
-    let index = 0;
-
-    // অক্ষর টাইপ করার সাথে আলোর ঝিলিক দেওয়া
-    function typeName() {
-      if (index < fullName.length) {
-        const span = document.createElement('span');
-        span.className = 'char';
+    <!-- ফিঙ্গারপ্রিন্ট লক স্ক্রিন (CID.jpg ছবিসহ) -->
+    <div id="lamp-section">
+        <h2>Security Check</h2>
+        <!-- CID.jpg ছবিযুক্ত ল্যাম্প -->
+        <div id="lamp-icon" class="hanging-lamp">
+            <img src="CID.jpg" height="120" alt="CID">
+            Ku Re ****
+        </div>
         
-        // স্পেস বা ফাঁকা জায়গা ঠিক রাখা
-        span.innerHTML = fullName[index] === " " ? "&nbsp;&nbsp;" : fullName[index];
-        
-        container.appendChild(span);
-        index++;
-        
-        // ঠিক ১ সেকেন্ড (১০-০০ মিলি-সেকেন্ড) পর পর পরের অক্ষর আসবে
-        setTimeout(typeName, 1000); 
-      }
-    }
+        <!-- ফিঙ্গারপ্রিন্ট অপশন -->
+        <div class="fingerprint-container" onclick="scanFingerprint()">
+            <div class="fingerprint-icon">🫵</div>
+            <div class="instruction">Tap Fingerprint to Unlock</div>
+        </div>
+    </div>
 
-    // পাঁপড়ি তৈরির ফাংশন
-    function createPetals() {
-      for (let i = 0; i < 20; i++) {
-        const petal = document.createElement('div');
-        petal.className = 'petal';
-        petal.style.left = Math.random() * 100 + 'vw';
-        petal.style.animationDuration = (Math.random() * 3 + 3) + 's';
-        petal.style.animationDelay = Math.random() * 5 + 's';
-        document.body.appendChild(petal);
-      }
-    }
+    <!-- হোম সেকশন (প্রধান পেজ - ফিঙ্গার দেওয়ার পর এটি আসবে) -->
+    <div id="home-section" class="page-section-box">
+        <h1>WELCOME TO MY FIRST HTML PROJECT</h1>
+        <h3>Know about Debasish Moyra.</h3>
+        Click on images to know      
+        <ul class="menu-list">
+            <li><span class="link-text" onclick="showPage('login-section')"><img src="Debasish.jpg" height="150"; width="250" alt="Personal Data"></span></li>
+            <li><span class="link-text" onclick="showPage('contact-section')"><img src="contact.jpg" height="150" alt="Contact"></span></li>
+            <li><span class="link-text" onclick="showPage('address-section')"><img src="Home.jpg" height="150" alt="Address"></span></li>
+            <li><span class="link-text" onclick="showPage('achievement-section')">Achievements</span></li>
+        </ul>
+    </div>
 
-    // স্ক্রিপ্ট স্টার্ট
-    typeName();
-    createPetals();
-  </script>
+    <!-- ০. লগইন সেকশন -->
+    <div id="login-section" class="page-section">
+        <h2>Enter Login Details</h2>
+        <p>Please enter User ID and Password to view Personal Data.</p>
+        <div class="login-box">
+            <input type="text" id="userid" placeholder="Enter User ID">
+            <input type="password" id="password" placeholder="Enter Password">
+            <button onclick="checkLogin()">Submit</button>
+            <div id="error" class="error-msg"></div>
+        </div>
+        <button class="back-btn" onclick="showHome()">Go Back</button>
+    </div>
+
+    <!-- ১. আসল পার্সোনাল ডাটা সেকশন -->
+    <div id="biodata-section" class="page-section">
+        <h2>Personal Data</h2>
+        <ul>
+            <li><strong>Name:</strong> Debasish Moyra</li>
+            <li><strong>Father's Name:</strong> Jadugopal Moyra</li>
+            <li><strong>Mother's Name:</strong> Soma Moyra</li>
+            <li><strong>Date of Birth:</strong> 21/11/2006 </li>
+            <li><strong>Friend:</strong> Himanshu Gayan</li>
+            <li><strong>GF:</strong> 404 error</li>
+        </ul>
+        <button class="back-btn" onclick="showHome()">Go Back</button>
+    </div>
+
+    <!-- ২. কন্টাক্ট সেকশন -->
+    <div id="contact-section" class="page-section">
+        <h2>Contact Information</h2>
+        <ul>
+            <li><strong>Phone:</strong> +91 9593902097</li>
+            <li><strong>WhatsApp:</strong> <a href="https://wa.me/qr/LZQGUUSC736YC1" target="_blank">9593902097</a></li>
+            <li><strong>Email:</strong> debasishmoyra@gmail.com</li>
+            
+            <li><strong>Facebook:</strong> <a href="https://wa.me/qr/LZQGUUSC736YC1" target="_blank">Soma Moyra</a></li>
+        </ul>
+        <button class="back-btn" onclick="showHome()">Go Back</button>
+    </div>
+
+    <!-- ৩. অ্যাড্রেস সেকশন -->
+    <div id="address-section" class="page-section">
+        <h2>Address Details</h2>
+        <ul>
+            <li><strong>Village/Town:</strong> Uttar Boyargodi</li>
+            <li><strong>District:</strong> South 24 Parganas</li>
+            <li><strong>State:</strong> West Bengal</li>
+            <li><strong>Country:</strong> India</li>
+            <li><strong>PIN:</strong> 743349</li>
+        </ul>
+        <button class="back-btn" onclick="showHome()">Go Back</button>
+    </div>
+
+    <!-- ৪. অ্যাচিভমেন্ট সেকশন -->
+    <div id="achievement-section" class="page-section">
+        <h2>Achievements</h2>
+        <ul>
+            <li><strong>Project 1:</strong> Completed My first HTML project successfully.</li>
+            <li><strong>Project 2:</strong> Rejected by Sathi without eating sandel or slapping</li>
+            <li><strong>Project 3:</strong> In serch for I get a lot of sister.</li>
+        </ul>
+        <button class="back-btn" onclick="showHome()">Go Back</button>
+    </div>
+
+    <!-- জাভাস্ক্রিপ্ট কোড -->
+    <script>
+        // ফিঙ্গারপ্রিন্ট স্ক্যান করার ফাংশন
+        function scanFingerprint() {
+            var lampIcon = document.getElementById('lamp-icon');
+            
+            // ছবিতে গ্লো ইফেক্ট যোগ করা
+            lampIcon.classList.add('glow');
+
+            // সামান্য সময় নিয়ে লক স্ক্রিন লুকিয়ে হোম পেজ নিয়ে আসা
+            setTimeout(function() {
+                document.getElementById('lamp-section').style.display = 'none';
+                document.getElementById('home-section').style.display = 'block';
+            }, 500);
+        }
+
+        function showPage(pageId) {
+            document.getElementById('home-section').style.display = 'none';
+            
+            var sections = document.getElementsByClassName('page-section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+            
+            document.getElementById(pageId).style.display = 'block';
+            
+            if (pageId === 'login-section') {
+                document.getElementById('userid').value = '';
+                document.getElementById('password').value = '';
+                document.getElementById('error').innerText = '';
+            }
+        }
+
+        function showHome() {
+            var sections = document.getElementsByClassName('page-section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+            document.getElementById('home-section').style.display = 'block';
+        }
+
+        function checkLogin() {
+            var user = document.getElementById('userid').value;
+            var pass = document.getElementById('password').value;
+            var errorMsg = document.getElementById('error');
+
+            if (user === 'Deba403' && pass === 'Deba403') {
+                document.getElementById('login-section').style.display = 'none';
+                document.getElementById('biodata-section').style.display = 'block';
+            } else {
+                errorMsg.innerText = 'Incorrect User ID or Password!';
+            }
+        }
+    </script>
+
 </body>
-</html>
+  </html>
