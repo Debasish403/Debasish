@@ -130,21 +130,6 @@
             font-size: 0.9em;
             color: #95a5a6;
         }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
         .admin-controls {
             display: none;
             margin-top: 20px;
@@ -346,32 +331,262 @@
     <div class="modal-content" style="max-width: 400px;">
         <button class="close-btn" onclick="closeModal('loginModal')">Close</button>
         <h2 class="modal-title">Admin Login</h2>
-        <div class="form-group">
-            <label>User ID</label>
-            <input type="text" id="userId" placeholder="Enter User ID">
+        <div class="form-group" style="margin-bottom:15px;">
+            <label style="display:block; margin-bottom:5px; font-weight:600;">User ID</label>
+            <input type="text" id="userId" placeholder="Enter User ID" style="width:100%; padding:8px; box-sizing:border-box;">
         </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" id="password" placeholder="Enter Password">
+        <div class="form-group" style="margin-bottom:15px;">
+            <label style="display:block; margin-bottom:5px; font-weight:600;">Password</label>
+            <input type="password" id="password" placeholder="Enter Password" style="width:100%; padding:8px; box-sizing:border-box;">
         </div>
         <button class="btn-admin" style="width: 100%; padding: 10px;" onclick="checkLogin()">Login</button>
     </div>
 </div>
 
 <!-- Default Modals for Class 1 to Sem 1 -->
-<div id="class1Modal" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('class1Modal')">Close</button><h2>Class 1 Details</h2></div></div>
-<div id="class2Modal" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('class2Modal')">Close</button><h2>Class 2 Details</h2></div></div>
-<div id="class3Modal" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('class3Modal')">Close</button><h2>Class 3 Details</h2></div></div>
-<div id="class4Modal" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('class4Modal')">Close</button><h2>Class 4 Details</h2></div></div>
-<div id="class5Modal" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('class5Modal')">Close</button><h2>Class 5 Details</h2></div></div>
-<div id="class6Modal" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('class6Modal')">Close</button><h2>Class 6 Details</h2></div></div>
-<div id="class7Modal" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('class7Modal')">Close</button><h2>Class 7 Details</h2></div></div>
-<div id="class8Modal" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('class8Modal')">Close</button><h2>Class 8 Details</h2></div></div>
-<div id="class9Modal" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('class9Modal')">Close</button><h2>Class 9 Details</h2></div></div>
-<div id="class10Modal" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('class10Modal')">Close</button><h2>Class 10 Details</h2></div></div>
-<div id="class11Modal" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('class11Modal')">Close</button><h2>Class 11 Details</h2></div></div>
-<div id="class12Modal" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('class12Modal')">Close</button><h2>Class 12 Details</h2></div></div>
-<div id="sem1Modal" class="modal"><div class="modal-content"><button class="close-btn" onclick="closeModal('sem1Modal')">Close</button><h2>Semester 1 Details</h2></div></div>
+<div id="class1Modal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('class1Modal')">Close</button>
+        <h2 class="modal-title">Class 1 - Subject Wise Details</h2>
+        <p><strong>School:</strong> National Academy | <strong>Year:</strong> 2014</p>
+        <table>
+            <thead><tr><th>Subject Name</th><th>Obtained Marks</th><th>Full Marks</th></tr></thead>
+            <tbody>
+                <tr><td>English</td><td>270</td><td>300</td></tr>
+                <tr><td>Bengali</td><td>270</td><td>300</td></tr>
+                <tr><td>Mathematics</td><td>251</td><td>300</td></tr>
+                <tr><td>History</td><td>124</td><td>150</td></tr>
+                <tr><td>Geography</td><td>133</td><td>150</td></tr>
+                <tr><td>Science</td><td>137</td><td>150</td></tr>
+                <tr><td>GK</td><td>148</td><td>150</td></tr>
+                <tr><td>Drawing</td><td>103</td><td>150</td></tr>
+                <tr><td>Dance</td><td>128</td><td>150</td></tr>
+            </tbody>
+        </table>
+        <p><strong>Total Obtained: 1564 / 1800 (86.89%)</strong></p>
+    </div>
+</div>
+
+<div id="class2Modal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('class2Modal')">Close</button>
+        <h2 class="modal-title">Class 2 - Subject Wise Details</h2>
+        <p><strong>School:</strong> National Academy | <strong>Year:</strong> 2015</p>
+        <table>
+            <thead><tr><th>Subject Name</th><th>Obtained Marks</th><th>Full Marks</th></tr></thead>
+            <tbody>
+                <tr><td>English</td><td>191</td><td>300</td></tr>
+                <tr><td>Bengali</td><td>234</td><td>300</td></tr>
+                <tr><td>Mathematics</td><td>229</td><td>300</td></tr>
+                <tr><td>History</td><td>133</td><td>150</td></tr>
+                <tr><td>Geography</td><td>131</td><td>150</td></tr>
+                <tr><td>Science</td><td>136</td><td>150</td></tr>
+                <tr><td>GK</td><td>136</td><td>150</td></tr>
+                <tr><td>Drawing</td><td>108</td><td>150</td></tr>
+                <tr><td>Dance</td><td>130</td><td>150</td></tr>
+            </tbody>
+        </table>
+        <p><strong>Total Obtained: 1428 / 1800 (79.33%)</strong></p>
+    </div>
+</div>
+
+<div id="class3Modal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('class3Modal')">Close</button>
+        <h2 class="modal-title">Class 3 - Subject Wise Details</h2>
+        <p><strong>School:</strong> National Academy | <strong>Year:</strong> 2016</p>
+        <table>
+            <thead><tr><th>Subject Name</th><th>Obtained Marks</th><th>Full Marks</th></tr></thead>
+            <tbody>
+                <tr><td>English</td><td>156</td><td>300</td></tr>
+                <tr><td>Bengali</td><td>204</td><td>300</td></tr>
+                <tr><td>Mathematics</td><td>233</td><td>300</td></tr>
+                <tr><td>History</td><td>106</td><td>150</td></tr>
+                <tr><td>Geography</td><td>96</td><td>150</td></tr>
+                <tr><td>Science</td><td>107</td><td>150</td></tr>
+                <tr><td>GK</td><td>96</td><td>150</td></tr>
+                <tr><td>Drawing</td><td>100</td><td>150</td></tr>
+                <tr><td>Dance</td><td>128</td><td>150</td></tr>
+            </tbody>
+        </table>
+        <p><strong>Total Obtained: 1226 / 1800 (68.11%)</strong></p>
+    </div>
+</div>
+
+<div id="class4Modal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('class4Modal')">Close</button>
+        <h2 class="modal-title">Class 4 - Subject Wise Details</h2>
+        <p><strong>School:</strong> National Academy | <strong>Year:</strong> 2017</p>
+        <table>
+            <thead><tr><th>Subject Name</th><th>Obtained Marks</th><th>Full Marks</th></tr></thead>
+            <tbody>
+                <tr><td>English</td><td>193</td><td>300</td></tr>
+                <tr><td>Bengali</td><td>201</td><td>300</td></tr>
+                <tr><td>Mathematics</td><td>256</td><td>300</td></tr>
+                <tr><td>History</td><td>138</td><td>150</td></tr>
+                <tr><td>Geography</td><td>127</td><td>150</td></tr>
+                <tr><td>Science</td><td>103</td><td>150</td></tr>
+                <tr><td>GK</td><td>127</td><td>150</td></tr>
+                <tr><td>Drawing</td><td>91</td><td>150</td></tr>
+                <tr><td>Dance</td><td>124</td><td>150</td></tr>
+            </tbody>
+        </table>
+        <p><strong>Total Obtained: 1360 / 1800 (75.56%)</strong></p>
+    </div>
+</div>
+
+<div id="class5Modal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('class5Modal')">Close</button>
+        <h2 class="modal-title">Class 5 - Subject Wise Details</h2>
+        <p><strong>School:</strong> Kautala Ramkrishna Ashram High School | <strong>Year:</strong> 2018</p>
+        <table>
+            <thead><tr><th>Subject Name</th><th>Obtained Marks</th><th>Full Marks</th></tr></thead>
+            <tbody>
+                <tr><td>Bengali</td><td>75</td><td>80</td></tr>
+                <tr><td>English</td><td>39</td><td>80</td></tr>
+                <tr><td>Mathematics</td><td>63</td><td>80</td></tr>
+                <tr><td>Poribesh porichiti</td><td>63</td><td>80</td></tr>
+                <tr><td>Physical education</td><td>132</td><td>160</td></tr>
+            </tbody>
+        </table>
+        <p><strong>Total Obtained: 372 / 480 (77.50%)</strong></p>
+    </div>
+</div>
+
+<div id="class6Modal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('class6Modal')">Close</button>
+        <h2 class="modal-title">Class 6 - Subject Wise Details</h2>
+        <p><strong>School:</strong> Kautala Ramkrishna Ashram High School | <strong>Year:</strong> 2019</p>
+        <table>
+            <thead><tr><th>Subject Name</th><th>Obtained Marks</th><th>Full Marks</th></tr></thead>
+            <tbody>
+                <tr><td>Bengali</td><td>63</td><td>110</td></tr>
+                <tr><td>English</td><td>77</td><td>110</td></tr>
+                <tr><td>Mathematics</td><td>78</td><td>110</td></tr>
+                <tr><td>Science</td><td>66</td><td>110</td></tr>
+                <tr><td>History</td><td>43</td><td>110</td></tr>
+                <tr><td>Geography</td><td>77</td><td>110</td></tr>
+                <tr><td>Physical education</td><td>115</td><td>140</td></tr>
+            </tbody>
+        </table>
+        <p><strong>Total Obtained: 520 / 800 (65.00%)</strong></p>
+    </div>
+</div>
+
+<div id="class7Modal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('class7Modal')">Close</button>
+        <h2 class="modal-title">Class 7 - Subject Wise Details</h2>
+        <p><strong>School:</strong> Kautala Ramkrishna Ashram High School | <strong>Year:</strong> 2020</p>
+        <table>
+            <thead><tr><th>Subject Name</th><th>Obtained Marks</th><th>Full Marks</th></tr></thead>
+            <tbody>
+                <tr><td>Bengali</td><td>83</td><td>110</td></tr>
+                <tr><td>English</td><td>69</td><td>110</td></tr>
+                <tr><td>Sanskrit</td><td>74</td><td>110</td></tr>
+                <tr><td>Mathematics</td><td>92</td><td>110</td></tr>
+                <tr><td>Science</td><td>57</td><td>110</td></tr>
+                <tr><td>History</td><td>46</td><td>110</td></tr>
+                <tr><td>Geography</td><td>80</td><td>110</td></tr>
+                <tr><td>Physical education</td><td>108</td><td>130</td></tr>
+            </tbody>
+        </table>
+        <p><strong>Total Obtained: 609 / 900 (67.67%)</strong></p>
+    </div>
+</div>
+
+<div id="class8Modal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('class8Modal')">Close</button>
+        <h2 class="modal-title">Class 8 - Subject Wise Details</h2>
+        <p><strong>School:</strong> Kautala Ramkrishna Ashram High School | <strong>Year:</strong> 2021</p>
+        <p style="text-align: center; color: #e67e22; font-weight: bold; margin: 20px 0;">Promoted during the COVID-19 Lockdown Period.</p>
+    </div>
+</div>
+
+<div id="class9Modal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('class9Modal')">Close</button>
+        <h2 class="modal-title">Class 9 - Subject Wise Details</h2>
+        <p><strong>School:</strong> Kautala Ramkrishna Ashram High School | <strong>Year:</strong> 2022</p>
+        <p style="text-align: center; color: #e67e22; font-weight: bold; margin: 20px 0;">Promoted during the COVID-19 Lockdown Period.</p>
+    </div>
+</div>
+
+<div id="class10Modal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('class10Modal')">Close</button>
+        <h2 class="modal-title">Class 10 (Madhyamik) - Subject Wise Details</h2>
+        <p><strong>School:</strong> Kautala Ramkrishna Ashram High School | <strong>Year:</strong> 2023</p>
+        <h3 style="color: #3498db; margin-top: 15px;">Board Exam (Madhyamik)</h3>
+        <table>
+            <thead><tr><th>Subject Name</th><th>Obtained Marks</th><th>Full Marks</th></tr></thead>
+            <tbody>
+                <tr><td>English</td><td>80</td><td>100</td></tr>
+                <tr><td>Bengali</td><td>62</td><td>100</td></tr>
+                <tr><td>Mathematics</td><td>82</td><td>100</td></tr>
+                <tr><td>Physical Science</td><td>80</td><td>100</td></tr>
+                <tr><td>Life Science</td><td>77</td><td>100</td></tr>
+                <tr><td>History</td><td>63</td><td>100</td></tr>
+                <tr><td>Geography</td><td>72</td><td>100</td></tr>
+            </tbody>
+        </table>
+        <p><strong>Board Total: 516 / 700 (73.71%)</strong></p>
+    </div>
+</div>
+
+<div id="class11Modal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('class11Modal')">Close</button>
+        <h2 class="modal-title">Class 11 - Subject Wise Details</h2>
+        <p><strong>School:</strong> Kautala Ramkrishna Ashram High School | <strong>Year:</strong> 2024</p>
+        <p style="text-align: center; color: #e67e22; font-weight: bold; margin: 20px 0;">Result pending / not added.</p>
+    </div>
+</div>
+
+<div id="class12Modal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('class12Modal')">Close</button>
+        <h2 class="modal-title">Class 12 (Higher Secondary) - Subject Wise Details</h2>
+        <p><strong>School:</strong> Kautala Ramkrishna Ashram High School | <strong>Year:</strong> 2025</p>
+        <table>
+            <thead><tr><th>Subject Name</th><th>Obtained Marks</th><th>Full Marks</th></tr></thead>
+            <tbody>
+                <tr><td>Bengali</td><td>62</td><td>100</td></tr>
+                <tr><td>English</td><td>92</td><td>100</td></tr>
+                <tr><td>Mathematics</td><td>98</td><td>100</td></tr>
+                <tr><td>Physics</td><td>77</td><td>100</td></tr>
+                <tr><td>Chemistry</td><td>63</td><td>100</td></tr>
+                <tr><td>Biology</td><td>73</td><td>100</td></tr>
+            </tbody>
+        </table>
+        <p><strong>Top 5 Total Obtained: 403 / 500 (80.60%)</strong></p>
+    </div>
+</div>
+
+<div id="sem1Modal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('sem1Modal')">Close</button>
+        <h2 class="modal-title">College Semester 1 - Subject Wise Details</h2>
+        <p><strong>College:</strong> Raidighi College (University of Calcutta)[span_0](start_span)[span_0](end_span) | <strong>Roll No:</strong> 253534220010[span_1](start_span)[span_1](end_span)</p>
+        <table>
+            <thead><tr><th>Course Code</th><th>Theoretical</th><th>Practical/Tutorial</th><th>Total</th><th>Grade</th><th>Status</th></tr></thead>
+            <tbody>
+                <tr><td>MMTH-CC-1</td><td>47[span_2](start_span)[span_2](end_span)</td><td>23[span_3](start_span)[span_3](end_span)</td><td>70[span_4](start_span)[span_4](end_span)</td><td>A[span_5](start_span)[span_5](end_span)</td><td>P[span_6](start_span)[span_6](end_span)</td></tr>
+                <tr><td>MPHS-CC-1</td><td>42[span_7](start_span)[span_7](end_span)</td><td>21[span_8](start_span)[span_8](end_span)</td><td>63[span_9](start_span)[span_9](end_span)</td><td>B+[span_10](start_span)[span_10](end_span)</td><td>P[span_11](start_span)[span_11](end_span)</td></tr>
+                <tr><td>MMTH-SEC-1</td><td>58[span_12](start_span)[span_12](end_span)</td><td>23[span_13](start_span)[span_13](end_span)</td><td>81[span_14](start_span)[span_14](end_span)</td><td>A+[span_15](start_span)[span_15](end_span)</td><td>P[span_16](start_span)[span_16](end_span)</td></tr>
+                <tr><td>PHED-IDC-1</td><td>16[span_17](start_span)[span_17](end_span)</td><td>22[span_18](start_span)[span_18](end_span)</td><td>38[span_19](start_span)[span_19](end_span)</td><td>B[span_20](start_span)[span_20](end_span)</td><td>P[span_21](start_span)[span_21](end_span)</td></tr>
+                <tr><td>ENGC-AEC-1</td><td>42[span_22](start_span)[span_22](end_span)</td><td>-[span_23](start_span)[span_23](end_span)</td><td>42[span_24](start_span)[span_24](end_span)</td><td>A+[span_25](start_span)[span_25](end_span)</td><td>P[span_26](start_span)[span_26](end_span)</td></tr>
+                <tr><td>ENVS-CVAC-1.1</td><td>21[span_27](start_span)[span_27](end_span)</td><td>-[span_28](start_span)[span_28](end_span)</td><td>21[span_29](start_span)[span_29](end_span)</td><td>C+[span_30](start_span)[span_30](end_span)</td><td>P[span_31](start_span)[span_31](end_span)</td></tr>
+                <tr><td>CONS-CVAC-1.2</td><td>15[span_32](start_span)[span_32](end_span)</td><td>-[span_33](start_span)[span_33](end_span)</td><td>15[span_34](start_span)[span_34](end_span)</td><td>C[span_35](start_span)[span_35](end_span)</td><td>P[span_36](start_span)[span_36](end_span)</td></tr>
+            </tbody>
+        </table>
+        <p><strong>Total Obtained Marks: 330 | SGPA: 6.286 (Semester Cleared)[span_37](start_span)[span_37](end_span)</strong></p>
+    </div>
+</div>
 
 <script>
     window.onload = function() {
@@ -433,7 +648,6 @@
     }
 
     function startPromptAdd() {
-        // Step-by-step prompt popup questions exactly as requested
         var cName = prompt("Enter Class / Exam Name (e.g., College - Semester 2):");
         if (!cName) return;
 
@@ -447,7 +661,6 @@
         var subRows = "";
         var addMore = true;
         
-        // Loop to take multiple subjects data
         while (addMore) {
             var subName = prompt("Enter Subject Name (or click Cancel to finish subjects):");
             if (!subName) {
@@ -462,7 +675,6 @@
 
         var modalId = 'modal_' + Date.now();
 
-        // Create the popup modal dynamically
         var modalHTML = `
         <div id="${modalId}" class="modal">
             <div class="modal-content">
@@ -480,7 +692,6 @@
 
         document.getElementById('dynamicModalsContainer').innerHTML += modalHTML;
 
-        // Add row to main summary table
         var tableBody = document.getElementById('summaryTableBody');
         var newRow = document.createElement('tr');
         
@@ -507,4 +718,4 @@
 </script>
 
 </body>
-</html>
+    </html>
